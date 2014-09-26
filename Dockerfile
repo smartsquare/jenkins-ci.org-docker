@@ -1,6 +1,6 @@
 FROM ubuntu:14.04
 
-RUN apt-get update && apt-get install -y wget git curl zip && apt-get clean
+RUN apt-get update && apt-get install -y wget git curl zip vncserver && apt-get clean
 RUN apt-get update && apt-get install -y --no-install-recommends openjdk-7-jdk && apt-get clean bash
 
 RUN wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
