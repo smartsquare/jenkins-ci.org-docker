@@ -1,12 +1,10 @@
 FROM ubuntu:14.04
 
-RUN echo "1.565.2" > .lts-version-number
-
 RUN apt-get update && apt-get install -y wget git curl zip && apt-get clean
 RUN apt-get update && apt-get install -y --no-install-recommends openjdk-7-jdk && apt-get clean bash
 
-RUN wget -q -O - http://pkg.jenkins-ci.org/debian-stable/jenkins-ci.org.key | sudo apt-key add -
-RUN echo deb http://pkg.jenkins-ci.org/debian-stable binary/ >> /etc/apt/sources.list
+RUN wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
+RUN echo deb http://pkg.jenkins-ci.org/debian binary/ >> /etc/apt/sources.list
 RUN apt-get update && apt-get install -y jenkins
 RUN usermod -m -d /var/jenkins_home jenkins
 RUN mkdir -p /var/jenkins_home && chown -R jenkins /var/jenkins_home
