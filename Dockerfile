@@ -20,7 +20,7 @@ ENV HOME /var/jenkins_home
 ENV USER jenkins
 
 # define url prefix for running jenkins behind Apache (https://wiki.jenkins-ci.org/display/JENKINS/Running+Jenkins+behind+Apache)
-ENV JENKINS_PREFIX /
+ENV JENKINS_PREFIX /jenkins
 
 # for main web interface:
 EXPOSE 8080
